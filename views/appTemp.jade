@@ -1,0 +1,649 @@
+doctype html(lang='en')
+head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    meta(name='description', content='')
+    |     
+    meta(name='author', content='')
+    |     
+    title Roommate App
+    // Bootstrap Core CSS
+    link(href='../bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // MetisMenu CSS
+    link(href='../bower_components/metisMenu/dist/metisMenu.min.css', rel='stylesheet')
+    // Timeline CSS
+    link(href='../dist/css/timeline.css', rel='stylesheet')
+    // Custom CSS
+    link(href='../dist/css/sb-admin-2.css', rel='stylesheet')
+    // Morris Charts CSS
+    link(href='../bower_components/morrisjs/morris.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='../bower_components/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      |         
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    #wrapper
+      // Navigation
+      nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand(href='index.html') Roommate App
+        // /.navbar-header
+        ul.nav.navbar-top-links.navbar-right
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-envelope.fa-fw
+              |   
+              i.fa.fa-caret-down
+            |                     
+            ul.dropdown-menu.dropdown-messages
+              li
+                a(href='#')
+                  div
+                    strong John Smith
+                    |                                     
+                    span.pull-right.text-muted
+                      em Yesterday
+                  |                                 
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    strong John Smith
+                    |                                     
+                    span.pull-right.text-muted
+                      em Yesterday
+                  |                                 
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    strong John Smith
+                    |                                     
+                    span.pull-right.text-muted
+                      em Yesterday
+                  |                                 
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              |                         
+              li.divider
+              |                         
+              li
+                a.text-center(href='#')
+                  strong Read All Messages
+                  |                                 
+                  i.fa.fa-angle-right
+            // /.dropdown-messages
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-tasks.fa-fw
+              |   
+              i.fa.fa-caret-down
+            |                     
+            ul.dropdown-menu.dropdown-tasks
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 1
+                      |                                         
+                      span.pull-right.text-muted 40% Complete
+                    |                                     
+                    .progress.progress-striped.active
+                      .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                        span.sr-only 40% Complete (success)
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 2
+                      |                                         
+                      span.pull-right.text-muted 20% Complete
+                    |                                     
+                    .progress.progress-striped.active
+                      .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width: 20%')
+                        span.sr-only 20% Complete
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 3
+                      |                                         
+                      span.pull-right.text-muted 60% Complete
+                    |                                     
+                    .progress.progress-striped.active
+                      .progress-bar.progress-bar-warning(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%')
+                        span.sr-only 60% Complete (warning)
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 4
+                      |                                         
+                      span.pull-right.text-muted 80% Complete
+                    |                                     
+                    .progress.progress-striped.active
+                      .progress-bar.progress-bar-danger(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+                        span.sr-only 80% Complete (danger)
+              |                         
+              li.divider
+              |                         
+              li
+                a.text-center(href='#')
+                  strong See All Tasks
+                  |                                 
+                  i.fa.fa-angle-right
+            // /.dropdown-tasks
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-bell.fa-fw
+              |   
+              i.fa.fa-caret-down
+            |                     
+            ul.dropdown-menu.dropdown-alerts
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-comment.fa-fw
+                    |  New Comment
+                    |                                     
+                    span.pull-right.text-muted.small 4 minutes ago
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-twitter.fa-fw
+                    |  3 New Followers
+                    |                                     
+                    span.pull-right.text-muted.small 12 minutes ago
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-envelope.fa-fw
+                    |  Message Sent
+                    |                                     
+                    span.pull-right.text-muted.small 4 minutes ago
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-tasks.fa-fw
+                    |  New Task
+                    |                                     
+                    span.pull-right.text-muted.small 4 minutes ago
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-upload.fa-fw
+                    |  Server Rebooted
+                    |                                     
+                    span.pull-right.text-muted.small 4 minutes ago
+              |                         
+              li.divider
+              |                         
+              li
+                a.text-center(href='#')
+                  strong See All Alerts
+                  |                                 
+                  i.fa.fa-angle-right
+            // /.dropdown-alerts
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-user.fa-fw
+              |   
+              i.fa.fa-caret-down
+            |                     
+            ul.dropdown-menu.dropdown-user
+              li
+                a(href='#')
+                  i.fa.fa-user.fa-fw
+                  |  User Profile
+              |                         
+              li
+                a(href='#')
+                  i.fa.fa-gear.fa-fw
+                  |  Settings
+              |                         
+              li.divider
+              |                         
+              li
+                a(href='login.html')
+                  i.fa.fa-sign-out.fa-fw
+                  |  Logout
+            // /.dropdown-user
+          // /.dropdown
+        // /.navbar-top-links
+        .navbar-default.sidebar(role='navigation')
+          .sidebar-nav.navbar-collapse
+            ul#side-menu.nav
+              li.sidebar-search
+                .input-group.custom-search-form
+                  input.form-control(type='text', placeholder='Search...')
+                  |                                 
+                  span.input-group-btn
+                    button.btn.btn-default(type='button')
+                      i.fa.fa-search
+                // /input-group
+              |                         
+              li
+                a(href='index.html')
+                  i.fa.fa-dashboard.fa-fw
+                  |  Home Page
+              |                         
+              li
+                a(href='#')
+                  i.fa.fa-bar-chart-o.fa-fw
+                  |  Charts
+                  span.fa.arrow
+                |                             
+                ul.nav.nav-second-level
+                  li
+                    a(href='flot.html') Flot Charts
+                  |                                 
+                  li
+                    a(href='morris.html') Morris.js Charts
+                // /.nav-second-level
+              |                         
+              li
+                a(href='tables.html')
+                  i.fa.fa-table.fa-fw
+                  |  Tables
+              |                         
+              li
+                a(href='forms.html')
+                  i.fa.fa-edit.fa-fw
+                  |  Forms
+              |                         
+              li
+                a(href='#')
+                  i.fa.fa-wrench.fa-fw
+                  |  UI Elements
+                  span.fa.arrow
+                |                             
+                ul.nav.nav-second-level
+                  li
+                    a(href='panels-wells.html') Panels and Wells
+                  |                                 
+                  li
+                    a(href='buttons.html') Buttons
+                  |                                 
+                  li
+                    a(href='notifications.html') Notifications
+                  |                                 
+                  li
+                    a(href='typography.html') Typography
+                  |                                 
+                  li
+                    a(href='icons.html')  Icons
+                  |                                 
+                  li
+                    a(href='grid.html') Grid
+                // /.nav-second-level
+              |                         
+              li
+                a(href='#')
+                  i.fa.fa-sitemap.fa-fw
+                  |  Multi-Level Dropdown
+                  span.fa.arrow
+                |                             
+                ul.nav.nav-second-level
+                  li
+                    a(href='#') Second Level Item
+                  |                                 
+                  li
+                    a(href='#') Second Level Item
+                  |                                 
+                  li
+                    a(href='#')
+                      | Third Level 
+                      span.fa.arrow
+                    |                                     
+                    ul.nav.nav-third-level
+                      li
+                        a(href='#') Third Level Item
+                      |                                         
+                      li
+                        a(href='#') Third Level Item
+                      |                                         
+                      li
+                        a(href='#') Third Level Item
+                      |                                         
+                      li
+                        a(href='#') Third Level Item
+                    // /.nav-third-level
+                // /.nav-second-level
+              |                         
+              li
+                a(href='#')
+                  i.fa.fa-files-o.fa-fw
+                  |  Sample Pages
+                  span.fa.arrow
+                |                             
+                ul.nav.nav-second-level
+                  li
+                    a(href='blank.html') Blank Page
+                  |                                 
+                  li
+                    a(href='login.html') Login Page
+                // /.nav-second-level
+          // /.sidebar-collapse
+        // /.navbar-static-side
+      |         
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Home Page
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-4.col-md-6
+            .panel.panel-primary
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-comments.fa-5x
+                  |                                 
+                  .col-xs-9.text-right
+                    .huge 26
+                    |                                     
+                    div New Messages!
+              |                         
+              a(href='#')
+                .panel-footer
+                  span.pull-left View Details
+                  |                                 
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  |                                 
+                  .clearfix
+          |                 
+          .col-lg-4.col-md-6
+            .panel.panel-green
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-tasks.fa-5x
+                  |                                 
+                  .col-xs-9.text-right
+                    .huge 12
+                    |                                     
+                    div New Tasks!
+              |                         
+              a(href='#')
+                .panel-footer
+                  span.pull-left View Details
+                  |                                 
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  |                                 
+                  .clearfix
+          |                 
+          .col-lg-4.col-md-6
+            .panel.panel-yellow
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-shopping-cart.fa-5x
+                  |                                 
+                  .col-xs-9.text-right
+                    .huge 124
+                    |                                     
+                    div New Shopping List Updates!
+              |                         
+              a(href='#')
+                .panel-footer
+                  span.pull-left View Details
+                  |                                 
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  |                                 
+                  .clearfix
+        // /.row
+        // /.col-lg-8
+        .col-lg-4
+          .panel.panel-default
+            .panel-heading
+              i.fa.fa-bell.fa-fw
+              |  Notifications Panel
+            // /.panel-heading
+            .panel-body
+              .list-group
+                a.list-group-item(href='#')
+                  i.fa.fa-comment.fa-fw
+                  |  New Comment
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 4 minutes ago
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-twitter.fa-fw
+                  |  3 New Followers
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 12 minutes ago
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-envelope.fa-fw
+                  |  Message Sent
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 27 minutes ago
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-tasks.fa-fw
+                  |  New Task
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 43 minutes ago
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-upload.fa-fw
+                  |  Server Rebooted
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 11:32 AM
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-bolt.fa-fw
+                  |  Server Crashed!
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 11:13 AM
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-warning.fa-fw
+                  |  Server Not Responding
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 10:57 AM
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-shopping-cart.fa-fw
+                  |  New Order Placed
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em 9:49 AM
+                |                                 
+                a.list-group-item(href='#')
+                  i.fa.fa-money.fa-fw
+                  |  Payment Received
+                  |                                     
+                  span.pull-right.text-muted.small
+                    em Yesterday
+              // /.list-group
+              a.btn.btn-default.btn-block(href='#') View All Alerts
+            // /.panel-body
+          // /.panel
+          // /.panel
+          .chat-panel.panel.panel-default
+            .panel-heading
+              i.fa.fa-comments.fa-fw
+              |                             Chat
+              |                             
+              .btn-group.pull-right
+                button.btn.btn-default.btn-xs.dropdown-toggle(type='button', data-toggle='dropdown')
+                  i.fa.fa-chevron-down
+                |                                 
+                ul.dropdown-menu.slidedown
+                  li
+                    a(href='#')
+                      i.fa.fa-refresh.fa-fw
+                      |  Refresh
+                  |                                     
+                  li
+                    a(href='#')
+                      i.fa.fa-check-circle.fa-fw
+                      |  Available
+                  |                                     
+                  li
+                    a(href='#')
+                      i.fa.fa-times.fa-fw
+                      |  Busy
+                  |                                     
+                  li
+                    a(href='#')
+                      i.fa.fa-clock-o.fa-fw
+                      |  Away
+                  |                                     
+                  li.divider
+                  |                                     
+                  li
+                    a(href='#')
+                      i.fa.fa-sign-out.fa-fw
+                      |  Sign Out
+            // /.panel-heading
+            .panel-body
+              ul.chat
+                li.left.clearfix
+                  span.chat-img.pull-left
+                    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
+                  |                                     
+                  .chat-body.clearfix
+                    .header
+                      strong.primary-font Jack Sparrow
+                      |                                             
+                      small.pull-right.text-muted
+                        i.fa.fa-clock-o.fa-fw
+                        |  12 mins ago
+                    |                                         
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                |                                 
+                li.right.clearfix
+                  span.chat-img.pull-right
+                    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
+                  |                                     
+                  .chat-body.clearfix
+                    .header
+                      small.text-muted
+                        i.fa.fa-clock-o.fa-fw
+                        |  13 mins ago
+                      |                                             
+                      strong.pull-right.primary-font Bhaumik Patel
+                    |                                         
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                |                                 
+                li.left.clearfix
+                  span.chat-img.pull-left
+                    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
+                  |                                     
+                  .chat-body.clearfix
+                    .header
+                      strong.primary-font Jack Sparrow
+                      |                                             
+                      small.pull-right.text-muted
+                        i.fa.fa-clock-o.fa-fw
+                        |  14 mins ago
+                    |                                         
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                |                                 
+                li.right.clearfix
+                  span.chat-img.pull-right
+                    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
+                  |                                     
+                  .chat-body.clearfix
+                    .header
+                      small.text-muted
+                        i.fa.fa-clock-o.fa-fw
+                        |  15 mins ago
+                      |                                             
+                      strong.pull-right.primary-font Bhaumik Patel
+                    |                                         
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+            // /.panel-body
+            .panel-footer
+              .input-group
+                input#btn-input.form-control.input-sm(type='text', placeholder='Type your message here...')
+                |                                 
+                span.input-group-btn
+                  button#btn-chat.btn.btn-warning.btn-sm
+                    | Send
+            // /.panel-footer
+          // /.panel .chat-panel
+        // /.col-lg-4
+      // /.row
+    // /#page-wrapper
+    // /#wrapper
+    // jQuery
+    script(src='../bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
+    // Morris Charts JavaScript
+    script(src='../bower_components/raphael/raphael-min.js')
+    |     
+    script(src='../bower_components/morrisjs/morris.min.js')
+    |     
+    script(src='../js/morris-data.js')
+    // Custom Theme JavaScript
+    script(src='../dist/js/sb-admin-2.js')

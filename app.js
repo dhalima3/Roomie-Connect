@@ -144,6 +144,8 @@ app.get('/items/:item_id', itemController.getItem);
 app.put('/items/:item_id', itemController.editItem);
 app.delete('/items/:item_id', itemController.deleteItems);
 
+app.get('/apptemp', homeController.appTemp);
+
 /**
  * API examples routes.
  */
