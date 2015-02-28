@@ -123,6 +123,7 @@ exports.postUpdateProfile = function(req, res, next) {
     user.profile.name = req.body.name || '';
     user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
+    user.profile.phoneNumber = req.body.phoneNumber || '';
     user.profile.website = req.body.website || '';
 
     user.save(function(err) {
