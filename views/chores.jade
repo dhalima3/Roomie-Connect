@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .page-header
+    h3 All Chores
+
+  ul
+    for chore in chores
+      li= chore.name

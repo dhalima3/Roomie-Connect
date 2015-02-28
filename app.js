@@ -30,6 +30,11 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
+ * Roommate app controllers
+ */
+ var choreController = require('./controllers/chore');
+
+/**
  * API keys and Passport configuration.
  */
 var secrets = require('./config/secrets');
@@ -110,6 +115,12 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
+
+/**
+ * Roommate App routes.
+ */
+
+app.get('/chores', choreController.getChores);
 /**
  * API examples routes.
  */
