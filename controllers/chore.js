@@ -29,6 +29,7 @@ exports.editChore = function(req, res) {
   	chore.name = req.body.name;
   	chore.lastPerson = req.body.lastPerson;
 	chore.daysInBetween = req.body.daysInBetween;
+	chore.finished = req.body.finished;
 	chore.lastDate = req.body.lastDate;
 
 	//save the chore
@@ -48,8 +49,8 @@ exports.editChore = function(req, res) {
 
 exports.getAllChores = function(req, res) {
   Chore.find(function(err, docs) {
-    // res.render('chores', { chores: docs });
-    res.json(docs);
+    res.render('chores', { chores: docs });
+    // res.json(docs);
   });
 };
 
@@ -80,6 +81,7 @@ exports.postChores = function(req, res) {
 	chore.name = req.body.name;
 	chore.lastPerson = req.body.lastPerson;
 	chore.daysInBetween = 0;
+	chore.finished = req.body.finished;
 	chore.lastDate = new Date();
 
 	//Save the chore

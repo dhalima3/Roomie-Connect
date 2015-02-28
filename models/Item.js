@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 
-var choreSchema = new mongoose.Schema({
+var itemSchema = new mongoose.Schema({
   name: String,
   lastPerson: String,
   daysInBetween: Number,
-  finished: Boolean,
+  Amount: Number,
+  picture: String,
   lastDate: {type: Date}
 });
 
-module.exports = mongoose.model('Chore', choreSchema);
+module.exports = mongoose.model('Item', itemSchema);
