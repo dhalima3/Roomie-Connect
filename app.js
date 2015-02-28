@@ -86,7 +86,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(lusca({
-  csrf: true,
+  csrf: false, //CHANGE BACK TO TRUE
   xframe: 'SAMEORIGIN',
   xssProtection: true
 }));
@@ -126,8 +126,10 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
  * Roommate App routes.
  */
 
-app.get('/chores', choreController.getChores);
+app.get('/chores', choreController.getAllChores);
 app.post('/chores', choreController.postChores);
+app.get('/chores/:chore_id', choreController.getChore);
+app.put('/chores/:chore_id', choreController.editChore);
 app.delete('/chores/:chore_id', choreController.deleteChores);
 
 /**

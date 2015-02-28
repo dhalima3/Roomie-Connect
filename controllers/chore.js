@@ -1,13 +1,55 @@
 var Chore = require('../models/Chore');
 
 /**
- * GET /chores
+ * GET a single chore /chores
+ * List one single chores.
+ */
+
+exports.getChore = function(req, res) {
+  Chore.findById(req.params.chore_id, function(err,chore){
+
+  	if (err)
+  		res.send(err);
+  	res.json(chore);
+  });
+};
+
+/**
+ * PUT /chores
+ * Edit/put one single chores.
+ */
+
+exports.editChore = function(req, res) {
+  Chore.findById(req.params.chore_id, function(err,chore){
+
+  	if (err)
+  		res.send(err);
+
+  	//update the chore
+  	chore.name = req.body.name;
+  	chore.lastPerson = req.body.lastPerson;
+	chore.daysInBetween = req.body.daysInBetween;
+	chore.lastDate = req.body.lastDate;
+
+	//save the chore
+	chore.save(function(err) {
+		if (err)
+			res.send(err);
+
+		res.json({ message: "Chore updated!" });
+	});
+  });
+};
+
+/**
+ * GET ALL /chores
  * List all chores.
  */
 
-exports.getChores = function(req, res) {
+exports.getAllChores = function(req, res) {
   Chore.find(function(err, docs) {
-    res.render('chores', { chores: docs });
+    // res.render('chores', { chores: docs });
+    res.json(docs);
   });
 };
 
@@ -17,25 +59,40 @@ exports.getChores = function(req, res) {
  */
 
 exports.postChores = function(req, res) {
-  Chore.create({
-  	text: req.body.text,
-	lastPerson: req.body.person,
-	daysInBetween: 0,
-	lastDate: req.body.date
-  }, function (err, chore) {
-  		if (err)
-  			res.send(err);
+ //  Chore.create({
+ //  	text: req.body.text,
+	// lastPerson: req.body.person,
+	// daysInBetween: 0,
+	// lastDate: req.body.date
+ //  }, function (err, chore) {
+ //  		if (err)
+ //  			res.send(err);
 
-  		Chore.find(function(err, chores) {
-  			if (err)
-  				res.send(err)
-  			res.json(chores);
-  		});
-  });
+ //  		Chore.find(function(err, chores) {
+ //  			if (err)
+ //  				res.send(err)
+ //  			res.json(chores);
+ //  		});
+ //  });
+	
+	//Create the chore
+	var chore = new Chore();
+	chore.name = req.body.name;
+	chore.lastPerson = req.body.lastPerson;
+	chore.daysInBetween = 0;
+	chore.lastDate = new Date();
+
+	//Save the chore
+	chore.save(function(err) {
+		if (err)
+			res.send(err);
+
+		res.json({ message: 'Chore created!'});
+	});
 };
 
 /**
- * Delete /chores
+ * DELETE /chores
  * Delete chores.
  */
  exports.deleteChores = function(req, res) {
@@ -45,10 +102,11 @@ exports.postChores = function(req, res) {
  		if (err)
  			res.send(err);
 
- 		Chore.find(function(err, chores) {
- 			if (err)
- 				res.send(err)
- 			res.json(chores);
- 		});
+ 		// Chore.find(function(err, chores) {
+ 		// 	if (err)
+ 		// 		res.send(err)
+ 		// 	res.json(chores);
+ 		// });
+ 		res.json({ message: 'Successfully deleted'});
  	});
  };
