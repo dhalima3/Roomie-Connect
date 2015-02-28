@@ -29,7 +29,7 @@ module.exports = {
     user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
     password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
   },
-  
+
   mandrill: {
     user: process.env.MANDRILL_USER || 'hackathonstarterdemo',
     password: process.env.MANDRILL_PASSWORD || 'E1K950_ydLR4mHw12a0ldA'
@@ -49,9 +49,10 @@ module.exports = {
     secret: process.env.LASTFM_SECRET || 'is cb7857b8fba83f819ea46ca13681fe71'
   },
 
+//Facebook information is accurate
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '754220301289665',
-    clientSecret: process.env.FACEBOOK_SECRET || '41860e58c256a3d7ad8267d3c1939a4a',
+    clientID: process.env.FACEBOOK_ID || '1402783520030337',
+    clientSecret: process.env.FACEBOOK_SECRET || 'd750b3209824313ba5574ada11f48744',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
@@ -77,9 +78,10 @@ module.exports = {
     passReqToCallback: true
   },
 
+//GOOGLE API INFORMATION IS ACCURATE
   google: {
-    clientID: process.env.GOOGLE_ID || '828110519058.apps.googleusercontent.com',
-    clientSecret: process.env.GOOGLE_SECRET || 'JdZsIaWhUFIchmC1a_IZzOHb',
+    clientID: process.env.GOOGLE_ID || '879116194510-0o6lua4kg0fnrls237gbp3ih5ulrfhs3.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'jhi3tXdZecaNId_hfTspfNZW',
     callbackURL: '/auth/google/callback',
     passReqToCallback: true
   },
