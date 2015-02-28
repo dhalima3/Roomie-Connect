@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
-var choreSchema = new Schema({
+var choreSchema = new mongoose.Schema({
   name: String,
-  responsibilities: String,
   lastPerson: String,
   daysInBetween: Number,
   lastDate: {type: Date}
