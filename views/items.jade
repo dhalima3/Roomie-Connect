@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .page-header
+    h3 All Items
+
+  ul
+    for item in items
+      li= item.name
