@@ -49,8 +49,8 @@ exports.editChore = function(req, res) {
 
 exports.getAllChores = function(req, res) {
   Chore.find(function(err, docs) {
-    res.render('chores', { chores: docs });
-    // res.json(docs);
+    // res.render('chores', { chores: docs });
+    res.json(docs);
   });
 };
 

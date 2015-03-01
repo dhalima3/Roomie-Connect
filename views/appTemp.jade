@@ -164,7 +164,7 @@ head
               |                         
               li
                 a.text-center(href='#')
-                  strong See All Tasks
+                  strong See All Chores
                   |                                 
                   i.fa.fa-angle-right
             // /.dropdown-tasks
@@ -404,7 +404,7 @@ head
                   .col-xs-9.text-right
                     .huge 0
                     |                                     
-                    div New Tasks!
+                    div New Chores!
           |                 
           .col-lg-4.col-md-6
             .panel.panel-yellow
@@ -423,72 +423,12 @@ head
           .panel.panel-default
             .panel-heading
               i.fa.fa-tasks.fa-fw
-              |  Tasks Panel
+              |  Chores Panel
             // /.panel-heading
             .panel-body
-              .list-group
-                a.list-group-item(href='#')
-                  i.fa.fa-comment.fa-fw
-                  |  Dummy
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 4 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-twitter.fa-fw
-                  |  3 New Followers
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 12 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-envelope.fa-fw
-                  |  Message Sent
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 27 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-tasks.fa-fw
-                  |  New Task
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 43 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-upload.fa-fw
-                  |  Server Rebooted
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 11:32 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-bolt.fa-fw
-                  |  Server Crashed!
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 11:13 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-warning.fa-fw
-                  |  Server Not Responding
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 10:57 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-shopping-cart.fa-fw
-                  |  New Order Placed
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 9:49 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-money.fa-fw
-                  |  Payment Received
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em Yesterday
+              #taskTable.list-group
+              // /.list-group
+              a.btn.btn-default.btn-block(href='#') Add a New Task
             // /.panel-body
           // /.panel
         // /.col-lg-4
@@ -563,6 +503,7 @@ head
                   span.pull-right.text-muted.small
                     em Yesterday
               // /.list-group
+              a.btn.btn-default.btn-block(href='#') Add a New Item
             // /.panel-body
           // /.panel
         // /.col-lg-4
@@ -680,16 +621,18 @@ head
     // /#page-wrapper
     // /#wrapper
     // jQuery
-    script(src='../bower_components/jquery/dist/jquery.min.js')
+    script(src='../bower_components/jquery/dist/jquery.min.js', type='text/javascript')
     // Bootstrap Core JavaScript
-    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js', type='text/javascript')
     // Metis Menu Plugin JavaScript
-    script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
+    script(src='../bower_components/metisMenu/dist/metisMenu.min.js', type='text/javascript')
     // Morris Charts JavaScript
-    script(src='../bower_components/raphael/raphael-min.js')
+    script(src='../bower_components/raphael/raphael-min.js', type='text/javascript')
     |     
-    script(src='../bower_components/morrisjs/morris.min.js')
+    script(src='../bower_components/morrisjs/morris.min.js', type='text/javascript')
     |     
-    script(src='../js/morris-data.js')
+    script(src='../js/morris-data.js', type='text/javascript')
     // Custom Theme JavaScript
-    script(src='../dist/js/sb-admin-2.js')
+    script(src='../dist/js/sb-admin-2.js', type='text/javascript')
+    // Custom Theme JavaScript
+    script(src='../js/global.js', type='text/javascript')
