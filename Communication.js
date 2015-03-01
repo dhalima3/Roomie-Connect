@@ -66,6 +66,8 @@ setInterval(function(){
       return;
     });
   };
+
+
   // var userKyle = new User({'profile': {'name': 'Kyle', 'phoneNumber': '8583535978'},
   //  'email': 'kylejablon@uchicago.edu'});
   // userKyle.save();
