@@ -5,7 +5,7 @@ function populateTaskTable() {
     $.getJSON('/chores', function(data) {
         $.each(data, function(){
             tableTaskContent += '<a href="#" class="list-group-item">';
-            tableTaskContent += '<i class="fa fa-comment fa-fw"></i> ' + this.name;
+            tableTaskContent += '<i class="fa fa-list fa-fw"></i> ' + this.name;
             tableTaskContent += '<span class="pull-right text-muted small"><em>';
             tableTaskContent += 'Last Done by ' + this.lastPerson + ' at ' + this.lastDate;
             tableTaskContent += '</em> </span> </a>'
@@ -20,12 +20,27 @@ function populateItemTable() {
     $.getJSON('/items', function(data2) {
         $.each(data2, function(){
             tableItemContent += '<a href="#" class="list-group-item">';
-            tableItemContent += '<i class="fa fa-comment fa-fw"></i> ' + this.name;
+            tableItemContent += '<i class="fa fa-shopping-cart fa-fw"></i> ' + this.name;
             tableItemContent += '<span class="pull-right text-muted small"><em>';
             tableItemContent += 'Bought last by ' + this.lastPerson + ' at ' + this.lastDate;
             tableItemContent += '</em> </span> </a>'
         });
         $('#itemTable').append(tableItemContent);
+    });
+}
+
+function populateBillTable() {
+    var tableBillContent = '';
+
+    $.getJSON('/bills', function(data) {
+        $.each(data, function(){
+            tableBillContent += '<a href="#" class="list-group-bill">';
+            tableBillContent += '<i class="fa fa-money fa-fw"></i> ' + this.name;
+            tableBillContent += '<span class="pull-right text-muted small"><em>';
+            tableBillContent += '$' + this.amount;
+            tableBillContent += '</em> </span> </a>'
+        });
+        $('#billTable').append(tableBillContent);
     });
 }
 // var tableEntry = '
@@ -40,3 +55,4 @@ function populateItemTable() {
 
 populateTaskTable();
 populateItemTable();
+populateBillTable();
