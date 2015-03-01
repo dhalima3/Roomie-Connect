@@ -22,6 +22,17 @@ var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 var twilio = require('twilio');
 
+/**
+ * Dwolla
+ */
+var Dwolla = require('dwolla-node')(cfg.apiKey, cfg.apiSecret); // initialize API client
+var $ = require('seq');
+
+// Some constants...
+var redirect_uri = 'http://localhost:3000/oauth_return';
+
+// use sandbox API environment
+Dwolla.sandbox = true;
 
 /**
  * Controllers (route handlers).
@@ -45,6 +56,11 @@ var Bill = require('./models/Bill');
 var choreController = require('./controllers/chore');
 var itemController = require('./controllers/item');
 var billController = require('./controllers/bill');
+
+/**
+ * Roommate app controllers
+ */
+var dwollaController = require('./controllers/dwolla');
 
 /**
  * API keys and Passport configuration.
@@ -187,6 +203,12 @@ app.get('/api/paypal', apiController.getPayPal);
 app.get('/api/paypal/success', apiController.getPayPalSuccess);
 app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/lob', apiController.getLob);
+
+/**
+ * Dwolla
+ */
+app.get('/dwolla', dwollaController.getAuthenticationURL);
+app.get('/oauth_return', dwollaController.exchangeTempCode)
 
 /**
  * OAuth authentication routes. (Sign in)
