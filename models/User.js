@@ -20,7 +20,6 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     phoneNumber: { type: String, default: '' },
-    picture: { type: String, default: '' }
   },
 
   resetPasswordToken: String,

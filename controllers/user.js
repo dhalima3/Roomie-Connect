@@ -84,7 +84,8 @@ exports.postSignup = function(req, res, next) {
 
   var user = new User({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    phoneNumber: req.body.phonenumber
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
@@ -125,6 +126,7 @@ exports.postUpdateProfile = function(req, res, next) {
     user.profile.location = req.body.location || '';
     user.profile.phoneNumber = req.body.phoneNumber || '';
     user.profile.website = req.body.website || '';
+    user.profile.phonenumber = req.body.phonenumber || '';
 
     user.save(function(err) {
       if (err) return next(err);

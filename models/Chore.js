@@ -10,6 +10,8 @@ var choreSchema = new mongoose.Schema({
   daysInBetween: { type: Number, default: 0},
   finished: { type: Boolean, default: false},
   lastDate: {type: Date, default: new Date(month, day)}
+  descrip: {type: String, default: ''},
+  sent: {type: Boolean, default: false}
 });
 
 module.exports = mongoose.model('Chore', choreSchema);

@@ -31,6 +31,8 @@ exports.editChore = function(req, res) {
 	chore.daysInBetween = req.body.daysInBetween;
 	chore.finished = req.body.finished;
 	chore.lastDate = req.body.lastDate;
+  chore.repeated = req.body.repeated;
+  chore.descrip = req.body.descrip;
 
 	//save the chore
 	chore.save(function(err) {
@@ -75,7 +77,7 @@ exports.postChores = function(req, res) {
  //  			res.json(chores);
  //  		});
  //  });
-	
+
 	//Create the chore
 	var chore = new Chore();
 	chore.name = req.body.name;
@@ -83,6 +85,9 @@ exports.postChores = function(req, res) {
 	chore.daysInBetween = 0;
 	chore.finished = req.body.finished;
 	chore.lastDate = new Date();
+  chore.repeated = false;
+  chore.descrip = "";
+  chore.sent = false;
 
 	//Save the chore
 	chore.save(function(err) {
