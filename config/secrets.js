@@ -64,6 +64,13 @@ module.exports = {
     passReqToCallback: true
   },
 
+  //Interactive Intelligence
+  interactInt: {
+    appID: process.env.INTERACTIVEINTELLIGENCE_ID || '442689',
+    apiKey: process.env.INTERACTIVEINTELLIGENCE_SECRET || 'ee81bbe89124b6ea14adcff504',
+    apiUrl: 'http://hackathonapi.inin.com/api'
+  },
+
   github: {
     clientID: process.env.GITHUB_ID || 'cb448b1d4f0c743a1e36',
     clientSecret: process.env.GITHUB_SECRET || '815aa4606f476444691c5f1c16b9c70da6714dc6',
@@ -94,13 +101,21 @@ module.exports = {
     passReqToCallback: true
   },
 
+//Mailjet api
+  mailjet:{
+    apiKey: process.env.MAILJET_KEY || 'eaaa004a6b6e9a000861636dfe384326',
+    secret: process.env.MAILJET_SECRET || '43d5ec75c6beeca0adda4facb9a32f5d'
+  },
+
   steam: {
     apiKey: process.env.STEAM_KEY || 'D1240DEF4D41D416FD291D0075B6ED3F'
   },
 
+//twilio account information is accurate
   twilio: {
-    sid: process.env.TWILIO_SID || 'AC6f0edc4c47becc6d0a952536fc9a6025',
-    token: process.env.TWILIO_TOKEN || 'a67170ff7afa2df3f4c7d97cd240d0f3'
+    sid: process.env.TWILIO_SID || 'AC62db3885eee7cfb7c7a8c796f649bed7',
+    token: process.env.TWILIO_TOKEN || 'b479dcca12df7b6df8c7a7690344aa14',
+    phone: process.env.TWILIO_PHONE || '+18589265348'
   },
 
   clockwork: {

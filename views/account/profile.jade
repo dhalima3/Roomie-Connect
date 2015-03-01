@@ -15,6 +15,10 @@ block content
       .col-sm-4
         input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
     .form-group
+      label.col-sm-2.control-label(for='phonenumber') PhoneNumber
+      .col-sm-4
+        input.form-control(type='text', name='phonenumber', id='phonenumber', value='#{user.profile.phonenumber}')
+    .form-group
       label.col-sm-2.control-label(for='gender') Gender
       .col-sm-4
         label.radio
@@ -87,18 +91,3 @@ block content
     p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
   else
     p: a(href='/auth/facebook') Link your Facebook account
-
-  if user.twitter
-    p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
-  else
-    p: a(href='/auth/twitter') Link your Twitter account
-
-  if user.github
-    p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
-  else
-    p: a(href='/auth/github') Link your GitHub account
-
-  if user.linkedin
-    p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-  else
-    p: a(href='/auth/linkedin') Link your LinkedIn account
