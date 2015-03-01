@@ -22,6 +22,16 @@ var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 var twilio = require('twilio');
 
+var Dwolla = require('dwolla-node')('o/mI8+rHHlGNRx0O0D0STPpmOYttDXETIQhz54+RaGTeUUR3ok', 'GC8p/uh2a0huIP5yjK/fHfofFsRP9IFlAvxcfwWRGdJ9T6rqH+'); // initialize API client
+// var $ = require('seq');
+// var express = require('express');
+// var app = express();
+
+// Some constants...
+var redirect_uri = 'http://localhost:3000/apptemp2';
+
+// use sandbox API environment
+Dwolla.sandbox = true;
 /**
  * Controllers (route handlers).
  */
@@ -196,7 +206,7 @@ app.get('/api/lob', apiController.getLob);
  * Dwolla
  */
 app.get('/dwolla', dwollaController.getAuthenticationURL);
-app.get('/apptemp', function(req, res) {
+app.get('/apptemp2', function(req, res) {
     var code = req.query.code;
 
     Dwolla.finishAuth(code, redirect_uri, function(error, auth) {
@@ -206,7 +216,7 @@ app.get('/apptemp', function(req, res) {
         return res.send(output);
     });
 });
-app.post('/sendMoney', dwollaController.sendMoney);
+app.get('/sendMoney', dwollaController.sendMoney);
 /**
  * OAuth authentication routes. (Sign in)
  */
