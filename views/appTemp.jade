@@ -331,7 +331,7 @@ head
             .panel-body
               #taskTable.list-group
               // /.list-group
-              a.btn.btn-default.btn-block(href='#') Add a New Task
+              a.btn.btn-default.btn-block(href='#myModal', data-toggle='modal') Add a New Task
             // /.panel-body
           // /.panel
         // /.col-lg-4
@@ -344,7 +344,7 @@ head
             .panel-body
               #itemTable.list-group
               // /.list-group
-              a.btn.btn-default.btn-block(href='#') Add a New Item
+              a.btn.btn-default.btn-block(href='#myModal2', data-toggle='modal') Add a New Item
             // /.panel-body
           // /.panel
         // /.col-lg-4
@@ -401,6 +401,69 @@ head
         // /.col-lg-4
       // /.row
     // /#page-wrapper
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            |             
+            h3#myModalLabel Add a new Chore!
+          |           
+          .modal-body
+            form.form-horizontal.col-sm-12
+              .form-group
+                label Name
+                input.form-control.required(placeholder='Chore name', data-placement='top', data-trigger='manual', data-content='Must be at least 3 characters long, and must only contain letters.', type='text')
+              |               
+              .form-group
+                label Last Person
+                input.form-control.email(placeholder="The last person that did the chore..they're safe", data-placement='top', data-trigger='manual', data-content='None', type='text')
+              |               
+              .form-group
+                label Description
+                textarea.form-control(placeholder='Description of the chore here..', data-placement='top', data-trigger='manual')
+              |               
+              #addChoreButton.form-group
+                button.btn.btn-success.pull-right(type='submit') Add It!
+                |  
+                p#form-error.help-block.pull-left.text-danger.hide &nbsp; The form is not valid. 
+          |           
+          .modal-footer
+            button.btn(data-dismiss='modal', aria-hidden='true') Cancel
+    |     
+    #myModal2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            |             
+            h3#myModalLabel Add a new Item!
+          |           
+          .modal-body
+            form.form-horizontal.col-sm-12
+              .form-group
+                label Item Name
+                input.form-control.required(placeholder='Item name', data-placement='top', data-trigger='manual', data-content='Must be at least 3 characters long, and must only contain letters.', type='text')
+              |               
+              .form-group
+                label Last Person
+                input.form-control.email(placeholder="The last person that bought the item..they're safe", data-placement='top', data-trigger='manual', data-content='None', type='text')
+              |               
+              .form-group
+                label Amount needed
+                input.form-control.email(placeholder='How many you guys need', data-placement='top', data-trigger='manual', data-content='None', type='text')
+              |               
+              .form-group
+                label Description
+                textarea.form-control(placeholder='Description of the item here..', data-placement='top', data-trigger='manual')
+              |               
+              #addChoreButton.form-group
+                button.btn.btn-success.pull-right(type='submit') Add It!
+                |  
+                p#form-error.help-block.pull-left.text-danger.hide &nbsp; The form is not valid. 
+          |           
+          .modal-footer
+            button.btn(data-dismiss='modal', aria-hidden='true') Cancel
     // /#wrapper
     // jQuery
     script(src='../bower_components/jquery/dist/jquery.min.js', type='text/javascript')

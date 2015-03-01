@@ -1,5 +1,5 @@
 var Chore = require('../models/Chore');
-var Communication = require('../Communication');
+// var Communication = require('../Communication');
 
 /**
  * GET a single chore /chores
@@ -40,7 +40,7 @@ exports.editChore = function(req, res) {
 		if (err)
 			res.send(err);
   //update with notifications
-  Communication.communicate(chore);
+  // Communication.communicate(chore);
 
 		res.json({ message: "Chore updated!" });
 	});
