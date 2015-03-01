@@ -273,105 +273,8 @@ head
               |                         
               li
                 a(href='index.html')
-                  i.fa.fa-dashboard.fa-fw
+                  i.fa.fa-home.fa-fw
                   |  Home Page
-              |                         
-              li
-                a(href='#')
-                  i.fa.fa-bar-chart-o.fa-fw
-                  |  Charts
-                  span.fa.arrow
-                |                             
-                ul.nav.nav-second-level
-                  li
-                    a(href='flot.html') Flot Charts
-                  |                                 
-                  li
-                    a(href='morris.html') Morris.js Charts
-                // /.nav-second-level
-              |                         
-              li
-                a(href='tables.html')
-                  i.fa.fa-table.fa-fw
-                  |  Tables
-              |                         
-              li
-                a(href='forms.html')
-                  i.fa.fa-edit.fa-fw
-                  |  Forms
-              |                         
-              li
-                a(href='#')
-                  i.fa.fa-wrench.fa-fw
-                  |  UI Elements
-                  span.fa.arrow
-                |                             
-                ul.nav.nav-second-level
-                  li
-                    a(href='panels-wells.html') Panels and Wells
-                  |                                 
-                  li
-                    a(href='buttons.html') Buttons
-                  |                                 
-                  li
-                    a(href='notifications.html') Notifications
-                  |                                 
-                  li
-                    a(href='typography.html') Typography
-                  |                                 
-                  li
-                    a(href='icons.html')  Icons
-                  |                                 
-                  li
-                    a(href='grid.html') Grid
-                // /.nav-second-level
-              |                         
-              li
-                a(href='#')
-                  i.fa.fa-sitemap.fa-fw
-                  |  Multi-Level Dropdown
-                  span.fa.arrow
-                |                             
-                ul.nav.nav-second-level
-                  li
-                    a(href='#') Second Level Item
-                  |                                 
-                  li
-                    a(href='#') Second Level Item
-                  |                                 
-                  li
-                    a(href='#')
-                      | Third Level 
-                      span.fa.arrow
-                    |                                     
-                    ul.nav.nav-third-level
-                      li
-                        a(href='#') Third Level Item
-                      |                                         
-                      li
-                        a(href='#') Third Level Item
-                      |                                         
-                      li
-                        a(href='#') Third Level Item
-                      |                                         
-                      li
-                        a(href='#') Third Level Item
-                    // /.nav-third-level
-                // /.nav-second-level
-              |                         
-              li
-                a(href='#')
-                  i.fa.fa-files-o.fa-fw
-                  |  Sample Pages
-                  span.fa.arrow
-                |                             
-                ul.nav.nav-second-level
-                  li
-                    a(href='blank.html') Blank Page
-                  |                                 
-                  li
-                    a(href='login.html') Login Page
-                // /.nav-second-level
           // /.sidebar-collapse
         // /.navbar-static-side
       |         
@@ -383,18 +286,6 @@ head
         // /.row
         .row
           .col-lg-4.col-md-6
-            .panel.panel-primary
-              .panel-heading
-                .row
-                  .col-xs-3
-                    i.fa.fa-comments.fa-5x
-                  |                                 
-                  .col-xs-9.text-right
-                    .huge 0
-                    |                                     
-                    div New Messages!
-          |                 
-          .col-lg-4.col-md-6
             .panel.panel-green
               .panel-heading
                 .row
@@ -404,7 +295,7 @@ head
                   .col-xs-9.text-right
                     .huge 0
                     |                                     
-                    div New Chores!
+                    div Chores this Week!
           |                 
           .col-lg-4.col-md-6
             .panel.panel-yellow
@@ -416,7 +307,19 @@ head
                   .col-xs-9.text-right
                     .huge 0
                     |                                     
-                    div New Shopping List Updates!
+                    div Items to Get!
+          |                 
+          .col-lg-4.col-md-6
+            .panel.panel-primary
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-comments.fa-5x
+                  |                                 
+                  .col-xs-9.text-right
+                    .huge 0
+                    |                                     
+                    div New Messages!
         // /.row
         // /.col-lg-8
         .col-lg-4
@@ -439,69 +342,7 @@ head
               |  Shopping List Panel
             // /.panel-heading
             .panel-body
-              .list-group
-                a.list-group-item(href='#')
-                  i.fa.fa-comment.fa-fw
-                  |  New Comment
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 4 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-twitter.fa-fw
-                  |  3 New Followers
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 12 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-envelope.fa-fw
-                  |  Message Sent
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 27 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-tasks.fa-fw
-                  |  New Task
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 43 minutes ago
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-upload.fa-fw
-                  |  Server Rebooted
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 11:32 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-bolt.fa-fw
-                  |  Server Crashed!
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 11:13 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-warning.fa-fw
-                  |  Server Not Responding
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 10:57 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-shopping-cart.fa-fw
-                  |  New Order Placed
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em 9:49 AM
-                |                                 
-                a.list-group-item(href='#')
-                  i.fa.fa-money.fa-fw
-                  |  Payment Received
-                  |                                     
-                  span.pull-right.text-muted.small
-                    em Yesterday
+              #itemTable.list-group
               // /.list-group
               a.btn.btn-default.btn-block(href='#') Add a New Item
             // /.panel-body
@@ -547,65 +388,6 @@ head
             // /.panel-heading
             .panel-body
               ul.chat
-                li.left.clearfix
-                  span.chat-img.pull-left
-                    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
-                  |                                     
-                  .chat-body.clearfix
-                    .header
-                      strong.primary-font Jack Sparrow
-                      |                                             
-                      small.pull-right.text-muted
-                        i.fa.fa-clock-o.fa-fw
-                        |  12 mins ago
-                    |                                         
-                    p
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                |                                 
-                li.right.clearfix
-                  span.chat-img.pull-right
-                    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
-                  |                                     
-                  .chat-body.clearfix
-                    .header
-                      small.text-muted
-                        i.fa.fa-clock-o.fa-fw
-                        |  13 mins ago
-                      |                                             
-                      strong.pull-right.primary-font Bhaumik Patel
-                    |                                         
-                    p
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                |                                 
-                li.left.clearfix
-                  span.chat-img.pull-left
-                    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
-                  |                                     
-                  .chat-body.clearfix
-                    .header
-                      strong.primary-font Jack Sparrow
-                      |                                             
-                      small.pull-right.text-muted
-                        i.fa.fa-clock-o.fa-fw
-                        |  14 mins ago
-                    |                                         
-                    p
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                |                                 
-                li.right.clearfix
-                  span.chat-img.pull-right
-                    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
-                  |                                     
-                  .chat-body.clearfix
-                    .header
-                      small.text-muted
-                        i.fa.fa-clock-o.fa-fw
-                        |  15 mins ago
-                      |                                             
-                      strong.pull-right.primary-font Bhaumik Patel
-                    |                                         
-                    p
-                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
             // /.panel-body
             .panel-footer
               .input-group
