@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 // Some constants...
-var redirect_uri = 'http://localhost:3000/apptemp2';
+var redirect_uri = 'http://localhost:3000/apptemp';
 
 // use sandbox API environment
 Dwolla.sandbox = true;

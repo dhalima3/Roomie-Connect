@@ -53,6 +53,33 @@ function populateBillTable() {
         $('#totalBillAmount').append(totalBillAmount);
     });
 }
+
+function login() {
+    $.ajax({
+        url: '/dwolla',
+        method: 'GET',
+        success: function(response){
+            var url = response.replace(/[a-z, ]+<a href="/i, '')
+                            .replace(/">.*/, '');
+            console.log(url);
+            window.location.href = url;
+        }
+    });   
+}
+
+function payBill() {
+    $.ajax({
+        url: '/sendMoney',
+        method: 'GET',
+        success: function(response){
+            // var url = response.replace(/[a-z, ]+<a href="/i, '')
+            //                 .replace(/">.*/, '');
+            // console.log(url);
+            // window.location.href = url;
+            console.log("success!");
+        }
+    });     
+}
 // var tableEntry = '
 // <a href="#" class="list-group-item">
 //     <i class="fa fa-comment fa-fw"></i> New Comment
@@ -66,3 +93,8 @@ function populateBillTable() {
 populateChoreTable();
 populateItemTable();
 populateBillTable();
+$('#payBill').click(function(e) {
+    e.preventDefault();
+    // login();
+    payBill();
+});
