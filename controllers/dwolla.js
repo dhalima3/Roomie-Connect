@@ -1,10 +1,10 @@
-var Dwolla = require('dwolla-node')(o/mI8+rHHlGNRx0O0D0STPpmOYttDXETIQhz54+RaGTeUUR3ok, GC8p/uh2a0huIP5yjK/fHfofFsRP9IFlAvxcfwWRGdJ9T6rqH+); // initialize API client
-var $ = require('seq');
+var Dwolla = require('dwolla-node')('o/mI8+rHHlGNRx0O0D0STPpmOYttDXETIQhz54+RaGTeUUR3ok', 'GC8p/uh2a0huIP5yjK/fHfofFsRP9IFlAvxcfwWRGdJ9T6rqH+'); // initialize API client
+// var $ = require('seq');
 var express = require('express');
 var app = express();
 
 // Some constants...
-var redirect_uri = 'http://localhost:3000/oauth_return';
+var redirect_uri = 'http://localhost:3000/apptemp';
 
 // use sandbox API environment
 Dwolla.sandbox = true;
@@ -20,7 +20,7 @@ exports.getAuthenticationURL = function(req, res) {
     var authUrl = Dwolla.authUrl(redirect_uri);
 
     return res.send('To begin the OAuth process, send the user off to <a href="' + authUrl + '">' + authUrl + '</a>');
-});
+};
 
 /**
  * STEP 2:
@@ -37,4 +37,17 @@ exports.exchangeTempCode = function(req, res) {
         Dwolla.setToken(auth.access_token);
         return res.send(output);
     });
-});
+};
+
+exports.sendMoney = function(req, res) {
+	// optional params:
+	var params = {
+	  destinationType: 'Email', 
+	  notes: 'Thanks for the coffee!'
+	};
+
+	Dwolla.send(7890, 'abhishek1@email.com', 1.00, params, function(err, data) {
+	   if (err) { console.log(err); }
+	   console.log(data);
+	});
+};

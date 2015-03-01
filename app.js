@@ -23,18 +23,6 @@ var connectAssets = require('connect-assets');
 var twilio = require('twilio');
 
 /**
- * Dwolla
- */
-var Dwolla = require('dwolla-node')(cfg.apiKey, cfg.apiSecret); // initialize API client
-var $ = require('seq');
-
-// Some constants...
-var redirect_uri = 'http://localhost:3000/oauth_return';
-
-// use sandbox API environment
-Dwolla.sandbox = true;
-
-/**
  * Controllers (route handlers).
  */
 var homeController = require('./controllers/home');
@@ -208,8 +196,17 @@ app.get('/api/lob', apiController.getLob);
  * Dwolla
  */
 app.get('/dwolla', dwollaController.getAuthenticationURL);
-app.get('/oauth_return', dwollaController.exchangeTempCode)
+app.get('/apptemp', function(req, res) {
+    var code = req.query.code;
 
+    Dwolla.finishAuth(code, redirect_uri, function(error, auth) {
+        var output = "Your OAuth access_token is: <b>" + auth.access_token + "</b>, which will expire in " + auth.expires_in + " seconds.<br>Your refresh_token is: <b>" + auth.refresh_token + "</b>, and that'll expire in " + auth.refresh_expires_in + " seconds.";
+        output += '<br><a href="/refresh?refreshToken=' + encodeURIComponent(auth.refresh_token) + '">Click here to get a new access and refresh token pair!</a>';
+        Dwolla.setToken(auth.access_token);
+        return res.send(output);
+    });
+});
+app.post('/sendMoney', dwollaController.sendMoney);
 /**
  * OAuth authentication routes. (Sign in)
  */
