@@ -36,6 +36,7 @@ var contactController = require('./controllers/contact');
  */
 var Chore = require('./models/Chore');
 var Item = require('./models/Item');
+var Bill = require('./models/Bill');
 
 
 /**
@@ -43,6 +44,7 @@ var Item = require('./models/Item');
  */
 var choreController = require('./controllers/chore');
 var itemController = require('./controllers/item');
+var billController = require('./controllers/bill');
 
 /**
  * API keys and Passport configuration.
@@ -144,7 +146,15 @@ app.get('/items/:item_id', itemController.getItem);
 app.put('/items/:item_id', itemController.editItem);
 app.delete('/items/:item_id', itemController.deleteItems);
 
+//Main app
 app.get('/apptemp', homeController.appTemp);
+
+//Bills
+app.get('/bills', billController.getAllBills);
+app.post('/bills', billController.postBills);
+app.get('/bills/:bill_id', billController.getBill);
+app.put('/bills/:bill_id', billController.editBill);
+app.delete('/bills/:bill_id', billController.deleteBills);
 
 /**
  * API examples routes.
