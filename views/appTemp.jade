@@ -293,7 +293,7 @@ head
                     i.fa.fa-tasks.fa-5x
                   |                                 
                   .col-xs-9.text-right
-                    .huge 0
+                    #totalChoreAmount.huge
                     |                                     
                     div Chores this Week!
           |                 
@@ -305,7 +305,7 @@ head
                     i.fa.fa-shopping-cart.fa-5x
                   |                                 
                   .col-xs-9.text-right
-                    .huge 0
+                    #totalItemAmount.huge
                     |                                     
                     div Items to Get!
           |                 
@@ -317,7 +317,7 @@ head
                     i.fa.fa-money.fa-5x
                   |                                 
                   .col-xs-9.text-right
-                    .huge $0
+                    #totalBillAmount.huge
                     |                                     
                     div You Owe this much this Month!
         // /.row
@@ -329,7 +329,7 @@ head
               |  Chores Panel
             // /.panel-heading
             .panel-body
-              #taskTable.list-group
+              #choreTable.list-group
               // /.list-group
               a.btn.btn-default.btn-block(href='#myModal', data-toggle='modal') Add a New Task
             // /.panel-body

@@ -29,6 +29,7 @@ exports.editBill = function(req, res) {
   	//update the bill
   	bill.name = req.body.name;
   	bill.lastPerson = req.body.lastPerson;
+  	bill.amount = req.body.amount;
 	bill.daysInBetween = req.body.daysInBetween;
 	bill.finished = req.body.finished;
 	bill.lastDate = req.body.lastDate;
@@ -68,6 +69,7 @@ exports.postBills = function(req, res) {
 	var bill = new Bill();
 	bill.name = req.body.name;
 	bill.lastPerson = req.body.lastPerson;
+	bill.amount = req.body.amount;
 	bill.daysInBetween = 0;
 	bill.finished = req.body.finished;
 	bill.lastDate = new Date();

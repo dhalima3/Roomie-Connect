@@ -1,21 +1,25 @@
 
-function populateTaskTable() {
-    var tableTaskContent = '';
+function populateChoreTable() {
+    var tableChoreContent = '';
+    var totalChoreAmount = 0;
 
     $.getJSON('/chores', function(data) {
         $.each(data, function(){
-            tableTaskContent += '<a href="#" class="list-group-item">';
-            tableTaskContent += '<i class="fa fa-list fa-fw"></i> ' + this.name;
-            tableTaskContent += '<span class="pull-right text-muted small"><em>';
-            tableTaskContent += 'Last Done by ' + this.lastPerson + ' at ' + this.lastDate;
-            tableTaskContent += '</em> </span> </a>'
+            tableChoreContent += '<a href="#" class="list-group-item">';
+            tableChoreContent += '<i class="fa fa-list fa-fw"></i> ' + this.name;
+            tableChoreContent += '<span class="pull-right text-muted small"><em>';
+            tableChoreContent += 'Last Done by ' + this.lastPerson + ' at ' + this.lastDate;
+            tableChoreContent += '</em> </span> </a>';
+            totalChoreAmount++;
         });
-        $('#taskTable').append(tableTaskContent);
+        $('#choreTable').append(tableChoreContent);
+        $('#totalChoreAmount').append(totalChoreAmount);
     });
 }
 
 function populateItemTable() {
     var tableItemContent = '';
+    var totalItemAmount = 0;
 
     $.getJSON('/items', function(data2) {
         $.each(data2, function(){
@@ -23,24 +27,30 @@ function populateItemTable() {
             tableItemContent += '<i class="fa fa-shopping-cart fa-fw"></i> ' + this.name;
             tableItemContent += '<span class="pull-right text-muted small"><em>';
             tableItemContent += 'Bought last by ' + this.lastPerson + ' at ' + this.lastDate;
-            tableItemContent += '</em> </span> </a>'
+            tableItemContent += '</em> </span> </a>';
+            totalItemAmount++;
         });
         $('#itemTable').append(tableItemContent);
+        $('#totalItemAmount').append(totalItemAmount);
     });
 }
 
 function populateBillTable() {
     var tableBillContent = '';
+    var totalBillAmount = 0;
 
     $.getJSON('/bills', function(data) {
         $.each(data, function(){
-            tableBillContent += '<a href="#" class="list-group-bill">';
+            tableBillContent += '<a href="#" class="list-group-item">';
             tableBillContent += '<i class="fa fa-money fa-fw"></i> ' + this.name;
             tableBillContent += '<span class="pull-right text-muted small"><em>';
             tableBillContent += '$' + this.amount;
-            tableBillContent += '</em> </span> </a>'
+            tableBillContent += '</em> </span> </a>';
+            totalBillAmount+=this.amount;
         });
         $('#billTable').append(tableBillContent);
+        $('#totalBillAmount').append('$');
+        $('#totalBillAmount').append(totalBillAmount);
     });
 }
 // var tableEntry = '
@@ -53,6 +63,6 @@ function populateBillTable() {
 //No need to call document.ready because Javascript file is already included in 
 //the end!  It's never going to call document.ready!!!
 
-populateTaskTable();
+populateChoreTable();
 populateItemTable();
 populateBillTable();
