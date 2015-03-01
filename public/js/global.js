@@ -5,6 +5,7 @@ function populateTaskTable() {
     var tableTaskContent = '';
 
     $.getJSON('/chores', function(data) {
+        $('#taskTable').empty();
         $.each(data, function(){
             console.log(data);
             tableTaskContent += '<a href="#" class="list-group-item">';
@@ -12,10 +13,10 @@ function populateTaskTable() {
             tableTaskContent += '<span class="pull-right text-muted small"><em>';
             tableTaskContent += 'Last Done by ' + this.lastPerson + ' at ' + this.lastDate;
             tableTaskContent += '</em> </span> </a>'
-
-            $('#taskTable').append(tableTaskContent);
         });
+        $('#taskTable').append(tableTaskContent);
     });
+
 }
 
 function populateItemTable() {
