@@ -4,6 +4,7 @@ var itemSchema = new mongoose.Schema({
   name: String,
   lastPerson: String,
   daysInBetween: Number,
+  description: String,
   Amount: Number,
   picture: String,
   lastDate: {type: Date}
