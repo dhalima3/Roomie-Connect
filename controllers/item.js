@@ -49,10 +49,12 @@ exports.editItem = function(req, res) {
 
 exports.getAllItems = function(req, res) {
   Item.find(function(err, docs) {
-    res.render('items', { items: docs });
-    // res.json(docs);
+    // res.render('items', { items: docs });
+    res.json(docs);
   });
 };
+
+
 
 /**
  * POST /items
